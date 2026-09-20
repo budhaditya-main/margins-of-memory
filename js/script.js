@@ -185,19 +185,24 @@
 
 
   // =========================
-  // MOBILE MENU LINKS
-  // =========================
+// MOBILE MENU LINKS
+// =========================
 
-  document.querySelectorAll('#menuOverlay a').forEach(function(a){
+document.querySelectorAll('#menuOverlay a').forEach(function(a){
 
-    a.addEventListener('click', function(){
+  a.addEventListener('click', function(e){
 
-      closeOverlay('menuOverlay');
+    e.preventDefault();
 
-    });
+    var destination = this.getAttribute('href');
+
+    closeOverlay('menuOverlay');
+
+    window.location.href = destination;
 
   });
 
+});
 
 
   // =========================
